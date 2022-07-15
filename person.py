@@ -1,5 +1,6 @@
 import json 
 
+#this is question for ask to person
 detail = [
     "Full Name",
     "Nick Name",
@@ -12,17 +13,14 @@ detail = [
     "About",
 ]
 
-data = '{}'
+#this is save a data
 
-# json_data = str(data)
-
-new_data = json.loads(data)
+data = {}
 
 for d in detail:
     
     user = input(f"{d} >> ")
     new = {f"{d}":f"{user}"}
-    new_data.update(new)
+    data.update(new)
 
-print(new_data)
-
+print(data)
