@@ -12,17 +12,17 @@ detail = [
     "About",
 ]
 
-data = {}
+data = '{}'
 
-json_data = str(data)
+# json_data = str(data)
 
-new_data = json.loads(json_data)
+new_data = json.loads(data)
 
 for d in detail:
     
     user = input(f"{d} >> ")
     new = {f"{d}":f"{user}"}
-    data.update(new)
+    new_data.update(new)
 
 print(new_data)
 
