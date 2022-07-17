@@ -14,13 +14,25 @@ detail = [
 ]
 
 #this is save a data
+json_file = open("infro.json", "a")
 
-data = {}
+data = '{}'
+
+json_data = json.loads(data)
 
 for d in detail:
     
     user = input(f"{d} >> ")
     new = {f"{d}":f"{user}"}
-    data.update(new)
+    json_data.update(new)
 
-print(data)
+ID = json_data["ID"]
+
+person = {
+    f"{ID}": json_data
+}
+
+json_file.write(json.dumps(person))
+
+json_file.close()
+
