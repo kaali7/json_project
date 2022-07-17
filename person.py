@@ -17,7 +17,7 @@ detail = [
 #what u want write a new person detail and search old person detail
 print("What u want ? write a new person detail and read old person detail\n")
 
-print("write for \'w\' or read for \'r\' \n")
+print("write for \'w\' or read for \'r\'")
 user = input(">> ")
 
 if user=="w":
@@ -30,18 +30,28 @@ if user=="w":
     data = {}                              
 
     ID = ""
+    
+    while True:
+        for d in detail:
+            if d=="ID":
+                print("\n")
+                print("Next person don't get your detail")
+                print("Frist create our ID\n")
+                ID = input(f"{d} >> ")
 
-    for d in detail:
-        if d=="ID":
-            print("Next person don't get your detail\n")
-            print("Frist create our ID\n")
-            ID = input(f"{d} >> ")
-
+            else:
+                user = input(f"{d} >> ")
+                new = {f"{d}":f"{user}"}
+                data.update(new)
+        
+        print("\n")
+        print("IF u want to change anything type \'y\' and press enter")
+        ans = input(">> ")
+        if ans == "y":
+            continue
         else:
-            user = input(f"{d} >> ")
-            new = {f"{d}":f"{user}"}
-            data.update(new)
-
+            break
+        
 
     person = {f"{ID}": data}       
 
